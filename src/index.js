@@ -2,9 +2,12 @@ require("dotenv").config();
 
 const express = require("express");
 const pool = require("./db");
+const requestTimer = require("./middlewares/requestTimer");
 
 const app = express();
 const PORT = process.env.PORT || 3000;
+
+app.use(requestTimer);
 
 const leadsRouter = require("./routes/leads");
 app.use("/leads", leadsRouter);

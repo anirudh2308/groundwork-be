@@ -6,6 +6,9 @@ const pool = require("./db");
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+const leadsRouter = require("./routes/leads");
+app.use("/leads", leadsRouter);
+
 app.get("/health", async (req, res) => {
 	try {
 		await pool.query("SELECT 1");

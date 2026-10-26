@@ -8,6 +8,7 @@
 		"dev": "node --watch src/index.js",
 		"db:schema": "node scripts/run-sql.js db/schema.sql",
 		"db:seed": "node scripts/run-sql.js db/seed.sql",
+		"db:indexes": "node scripts/run-sql.js db/indexes.sql",
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"author": "",

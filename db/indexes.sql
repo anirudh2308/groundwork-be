@@ -1,0 +1,1 @@
+CREATE INDEX idx_leads_city_phase_filed ON leads (city, phase, filed_at DESC);

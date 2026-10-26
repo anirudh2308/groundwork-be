@@ -3,14 +3,24 @@ require("dotenv").config();
 const express = require("express");
 const pool = require("./db");
 const requestTimer = require("./middlewares/requestTimer");
+const rateLimit = require("express-rate-limit");
+
+const leadsRouter = require("./routes/leads");
+
+const leadsLimiter = rateLimit({
+	windowMs: 60 * 1000,
+	limit: 5,
+	standardHeaders: "draft-7",
+	legacyHeaders: false,
+	message: { error: "Too many requests, please try again later." },
+});
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.use(requestTimer);
 
-const leadsRouter = require("./routes/leads");
-app.use("/leads", leadsRouter);
+app.use("/leads", leadsLimiter, leadsRouter);
 
 app.get("/health", async (req, res) => {
 	try {

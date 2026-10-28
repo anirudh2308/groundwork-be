@@ -1,5 +1,6 @@
 require("dotenv").config();
 
+const path = require("path");
 const express = require("express");
 const pool = require("./db");
 const requestTimer = require("./middlewares/requestTimer");
@@ -24,6 +25,7 @@ const PORT = process.env.PORT || 3000;
 app.use(requestTimer);
 app.use(express.json());
 app.use(sessionMiddleware);
+app.use(express.static(path.join(__dirname, "..", "public")));
 
 app.use("/auth", authRouter);
 app.use("/leads", requireAuth, leadsLimiter, leadsRouter);

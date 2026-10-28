@@ -36,7 +36,6 @@ router.post("/login", loginLimiter, async (req, res) => {
 			return res.status(401).json({ error: "Invalid email or password" });
 		}
 
-		// New session ID on login prevents session fixation.
 		req.session.regenerate((err) => {
 			if (err) {
 				console.error("Session regenerate failed:", err.message);

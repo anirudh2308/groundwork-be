@@ -17,7 +17,6 @@ module.exports = session({
 	cookie: {
 		httpOnly: true,
 		sameSite: "lax",
-		// Only enable once the app is served over HTTPS, or browsers will drop the cookie.
 		secure: process.env.COOKIE_SECURE === "true",
 		maxAge: SEVEN_DAYS_MS,
 	},

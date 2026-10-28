@@ -1,28 +1,28 @@
 {
-	"name": "groundwork-be",
-	"version": "1.0.0",
-	"description": "",
-	"main": "index.js",
-	"scripts": {
-		"start": "node src/index.js",
-		"dev": "node --watch src/index.js",
-		"db:schema": "node scripts/run-sql.js db/schema.sql",
-		"db:seed": "node scripts/run-sql.js db/seed.sql",
-		"db:indexes": "node scripts/run-sql.js db/indexes.sql",
-		"db:users": "node scripts/run-sql.js db/users.sql",
-		"db:sessions": "node scripts/run-sql.js db/sessions.sql",
-		"user:create": "node scripts/create-user.js",
-		"test": "echo \"Error: no test specified\" && exit 1"
-	},
-	"author": "",
-	"license": "ISC",
-	"dependencies": {
-		"bcryptjs": "^3.0.3",
-		"connect-pg-simple": "^10.0.0",
-		"dotenv": "^18.0.9",
-		"express": "^5.3.0",
-		"express-rate-limit": "^8.7.1",
-		"express-session": "^1.19.0",
-		"pg": "^8.23.1"
-	}
+  "name": "groundwork-be",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node init && node src/index.js",
+    "dev": "node init && node --watch src/index.js",
+    "db:schema": "node scripts/run-sql.js db/schema.sql",
+    "db:seed": "node scripts/run-sql.js db/seed.sql",
+    "db:indexes": "node scripts/run-sql.js db/indexes.sql",
+    "db:users": "node scripts/run-sql.js db/users.sql",
+    "db:sessions": "node scripts/run-sql.js db/sessions.sql",
+    "user:create": "node scripts/create-user.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "connect-pg-simple": "^10.0.0",
+    "dotenv": "^18.0.9",
+    "express": "^5.3.0",
+    "express-rate-limit": "^8.7.1",
+    "express-session": "^1.19.0",
+    "pg": "^8.23.1"
+  }
 }
